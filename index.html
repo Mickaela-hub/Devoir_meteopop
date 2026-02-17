@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!-- Commentaire-->
+<!-- Il manque Video en arrière plan, les hover, la page billeterie et la page contact n'est pas responsive-->
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteopop Festival - Lyon 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- En-tête -->
+    <header>
+        <!-- Barre de navigation-->
+        <nav>
+            <a href="index.html"> <img src="assets/img/logo.png" alt="Logo Meteopop" width="100" class="logo"></a>
+            <ul>
+                <li><a href="#programme">Le programme</a></li>
+                <li><a href="#infos">Infos pratiques</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="billetterie.html" class="btn-billetterie">Billetterie</a></li>
+            </ul>
+        </nav>
+        <!-- section présentation avec les deux boutons oranges-->
+        <div class="present">
+            <h1>Rendez-vous les 10, 11 et 12 juillet à Lyon</h1>
+            <div class="present">
+                <!-- Vidéo à modifier pour mettre en arrière plan -->
+                <video src="assets/video/festival.mp4" autoplay muted loop controls style="width: 100%;"></video>
+                <a href="programme.html" class="btn-orange">Tout le programme</a>
+                <a href="billetterie.html" class="btn-orange">Billetterie →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu -->
+    <main>
+        <!-- Section avec les artistes à la une -->
+        <section id="programme">
+            <h2>Artiste à la une !</h2>
+            <div class="grille-artistes">
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/stromae.jpg" alt="Stromae">
+                    <div class="nom-artiste">Stromae</div>
+                </div>
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/louane.jpg" alt="Louane">
+                    <div class="nom-artiste">Louane</div>
+                </div>
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/damso.jpg" alt="Damso">
+                    <div class="nom-artiste">Damso</div>
+                </div>
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/billie-eilish.jpg" alt="Billie Eilish">
+                    <div class="nom-artiste">Billie Eilish</div>
+                </div>
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/orelsan.jpeg" alt="Orelsan">
+                    <div class="nom-artiste">Orelsan</div>
+                </div>
+                <div class="carte-artiste">
+                    <img src="assets/img/artists/ridane.jpg" alt="Ridane">
+                    <div class="nom-artiste">Ridane</div>
+                </div>
+            </div>
+            <div class="center">
+                <a href="programme.html" class="btn-orange">Tout le programme</a>
+            </div>
+        </section>
+
+        <!-- Section info pratique-->
+        <section id="infos">
+            <h2>Infos pratiques</h2>
+            <div class="info-box">
+                <h3>Dates et horaires</h3>
+                <p>Le festival se déroulera du 10 au 12 juillet 2026 à Lyon...</p>
+            </div>
+            <div class="info-box">
+                <h3>Accès au festival</h3>
+                <p>Des navettes seront mises en place depuis les gares...</p>
+            </div>
+            <div class="info-box">
+                <h3>Tarifs</h3>
+                <p>Les billets pour le festival sont disponibles à partir de 30€...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p><a href="contact.html">Contactez-nous</a> 2026 Meteopop. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

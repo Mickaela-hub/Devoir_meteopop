@@ -1,0 +1,305 @@
+/* ==========================================================================
+   1. RESET & BASES 
+   (Nettoyage des marges par défaut pour un design identique partout)
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclut bordures et padding dans la largeur totale */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #3d106d; /* Couleur violette emblématique du festival */
+    text-align: center;
+    line-height: 1.6; /* Espace entre les lignes pour le confort de lecture */
+}
+
+/* Règle de sécurité pour éviter que les images ne dépassent de l'écran */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. NAVIGATION (Barre de menu)
+   ========================================================================== */
+
+   /* 1. État normal du logo */
+.logo {
+    height: 50px; /* Ta taille actuelle */
+    transition: transform 0.3s ease; /* Rend le grossissement fluide */
+}
+
+/* 2. État au survol (hover) */
+.logo:hover {
+    transform: scale(1.2); /* Grossit le logo de 20% */
+}
+
+
+nav {
+    background-color: #3d106d;
+    display: flex; /* Aligne le logo et le menu horizontalement */
+    justify-content: space-between; /* Pousse le logo à gauche et le menu à droite */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 5%; /* Marge interne (5% pour s'adapter à la largeur) */
+}
+
+nav ul {
+    display: flex; /* Aligne les liens de la liste horizontalement */
+    list-style: none; /* Enlève les puces (points) de la liste */
+    gap: 15px; /* Espace entre chaque lien */
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Enlève le soulignement des liens */
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s; /* Animation douce lors du survol */
+}
+
+/* Effet au survol des liens du menu */
+nav a:hover {
+    background:rgba(255, 255, 255, 0.295);
+}
+
+/* Bouton spécial pour la billetterie */
+.btn-billetterie {
+    background: #ff7300;
+}
+
+.btn-billetterie:hover {
+    background: #f0c29d;
+}
+
+/* ==========================================================================
+   3. SECTION HERO (En-tête avec image de fond)
+   ========================================================================== */
+.present {
+    /* Image de fond avec un voile noir (gradient) pour rendre le texte lisible */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), video('assets/video/festival.mp4');
+    background-size: cover; /* L'image remplit tout l'espace */
+    background-position: center;
+    min-height: 400px; /* Hauteur minimum */
+    display: flex;
+    flex-direction: column; /* Superpose titre et boutons */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+    color: white;
+    padding: 40px 20px;
+}
+
+.present h1 { 
+    font-size: 2.2rem; 
+    margin-bottom: 25px; 
+    max-width: 800px; /* Empêche le titre d'être trop large sur PC */
+}
+
+/* Boutons oranges centraux */
+.btn-orange { 
+    background: #ff7300; 
+    color: white; 
+    text-decoration: none; 
+    padding: 12px 25px; 
+    border-radius: 5px; 
+    font-weight: bold;
+    display: inline-block; /* Permet d'appliquer des marges et paddings */
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* ==========================================================================
+   4. GRILLE D'ARTISTES (Page d'accueil)
+   ========================================================================== */
+.grille-artistes { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    gap: 20px; 
+    max-width: 1100px; 
+    margin: 40px auto; /* Centre la grille dans la page */
+    padding: 0 20px; 
+}
+
+.carte-artiste { 
+    position: relative; /* Nécessaire pour placer le nom par-dessus l'image */
+    border-radius: 8px; 
+    overflow: hidden; /* Coupe ce qui dépasse (pour les coins arrondis) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+}
+
+.carte-artiste img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; /* Recadre l'image sans la déformer */
+}
+
+.nom-artiste { 
+    position: absolute; 
+    bottom: 0;
+    padding: 15px 0;
+    width: 100%; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 1.3rem; 
+    text-shadow: 1px 1px 5px black;
+    /* Dégradé noir transparent pour que le nom blanc ressorte sur la photo */
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+/* ==========================================================================
+   5. INFOS PRATIQUES
+   ========================================================================== */
+#infos { 
+    max-width: 900px; 
+    margin: 50px auto; 
+    padding: 0 20px;
+}
+
+.info-box { 
+    border: 2px solid #3d106d; 
+    border-radius: 20px; 
+    padding: 25px; 
+    margin-bottom: 25px; 
+}
+
+/* ==========================================================================
+   6. LISTE DE PROGRAMMATION (Lignes horizontales)
+   ========================================================================== */
+.liste-artistes {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.ligne-artiste {
+    display: flex; /* Date à gauche, texte au milieu, photo à droite */
+    align-items: center;
+    background: white;
+    border: 2px solid #3d106d;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* Bloc Date (Violet) */
+.date-spectacle {
+    background: #3d106d;
+    color: white;
+    padding: 20px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.date-spectacle .jour { font-size: 2rem; font-weight: bold; display: block; }
+
+/* Bloc Texte Central */
+.info-spectacle {
+    flex: 1; /* Prend tout l'espace restant */
+    padding: 20px 30px;
+}
+
+.info-spectacle h2 { color: #3d106d; margin-bottom: 5px; }
+
+/* Badges météo (Soleil, Pluie...) */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.soleil { background: #fbc02d; color: black; }
+.pluie { background: #1976d2; }
+.tonnerre { background: #212121; }
+
+.photo-artiste img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   7. FOOTER (Pied de page)
+   ========================================================================== */
+footer { 
+    background: #3d106d; 
+    color: white; 
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer a { color: #ff7300; text-decoration: none; font-weight: bold; }
+
+/* ==========================================================================
+   8. MEDIA QUERIES (Adaptation pour tablettes et mobiles)
+   ========================================================================== */
+
+/* Écrans moyens (Tablettes) */
+@media (max-width: 992px) {
+    .grille-artistes {
+        grid-template-columns: repeat(2, 1fr); /* Passe à 2 colonnes */
+    }
+}
+
+/* Écrans petits (Mobiles) */
+@media (max-width: 768px) {
+    /* Le menu se met en colonne */
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Les liens passent à la ligne si besoin */
+        justify-content: center;
+    }
+
+    .present h1 {
+        font-size: 1.6rem;
+    }
+
+    /* La liste de programmation passe en mode "empilé" */
+    .ligne-artiste {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .date-spectacle {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .info-spectacle h2 {
+        text-align: center;
+    }
+
+    .photo-artiste img {
+        width: 100%; /* La photo prend toute la largeur sur mobile */
+        height: 200px;
+    }
+}
+
+/* Très petits écrans (Smartphones verticaux) */
+@media (max-width: 480px) {
+    .grille-artistes {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .btn-orange {
+        display: block; /* Les boutons prennent toute la largeur */
+        width: 100%;
+        margin: 10px 0;
+    }
+}
