@@ -303,3 +303,54 @@ footer a { color: #ff7300; text-decoration: none; font-weight: bold; }
         margin: 10px 0;
     }
 }
+
+/* --- STYLE DE LA BILLETTERIE --- */
+
+/* On centre le tableau et on lui donne une largeur max */
+.tableau-prix {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: collapse; /* Fusionne les bordures pour un look propre */
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Pour garder les coins arrondis avec le fond du header */
+}
+
+/* Style de l'en-tête du tableau */
+.tableau-prix thead {
+    background-color: #3d106d; /* Violet Meteopop */
+    color: white;
+}
+
+.tableau-prix th, .tableau-prix td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Effet au survol des lignes pour la lisibilité */
+.tableau-prix tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mise en avant du Pass 3 jours (la meilleure offre) */
+.mise-en-avant {
+    background-color: #fff4e6; /* Fond très léger orange */
+    font-weight: bold;
+}
+
+/* Ajustement du bouton dans le tableau */
+.tableau-prix .btn-orange {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+/* Mobile : on adapte l'affichage si l'écran est trop petit */
+@media (max-width: 600px) {
+    .tableau-prix th:nth-child(2), 
+    .tableau-prix td:nth-child(2) {
+        display: none; /* On cache la colonne "Accès" sur petit mobile pour gagner de la place */
+    }
+}
